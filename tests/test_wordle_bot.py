@@ -138,3 +138,4 @@ def test_text_usernames_only():
     asyncio.run(worldleBot.analizar_mensaje(message))
     assert worldleBot.puntajes["juan"]["total"] == 2
     assert worldleBot.puntajes["maria"]["total"] == 2
+
