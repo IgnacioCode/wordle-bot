@@ -249,4 +249,5 @@ async def mostrar_puntajes(ctx):
     await ctx.send(tabla)
 
 
-bot.run(DISCORD_TOKEN)
+if __name__ == "__main__":
+    bot.run(DISCORD_TOKEN)
