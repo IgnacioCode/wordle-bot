@@ -217,7 +217,7 @@ async def mostrar_puntajes(ctx):
         await ctx.send("Todavía no hay puntajes registrados.")
         return
 
-    header = f"{'PLAYER':<25}|{'TOTAL':<5}|{'1/6':<4}|{'2/6':<4}|{'3/6':<4}|{'4/6':<4}|{'5/6':<4}|{'6/6':<4}"
+    header = f"{'PLAYER':<25}|{'TOTAL':<5}|{'1/6':<4}|{'2/6':<4}|{'3/6':<4}|{'4/6':<4}|{'5/6':<4}|{'6/6':<4}|{'PLAYED':<6}"
     separator = '-' * len(header)
     rows = []
 
@@ -242,6 +242,8 @@ async def mostrar_puntajes(ctx):
         for intentos in range(1, 7):
             cantidad = data["detalles"].get(intentos, 0)
             fila += f"{cantidad:<4}|"
+        cantidad_jugados = sum(data["detalles"].values())/ 6
+        fila += f"{cantidad_jugados:<4}|"
         rows.append(fila)
 
 
